@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mana3 — Owner Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <div id="login-screen" class="login-screen">
+    <h1>Mana3 Dashboard</h1>
+    <p>Enter your owner PIN to view bookings and dates.</p>
+    <input type="password" id="pin-input" placeholder="PIN" autocomplete="current-password">
+    <button type="button" id="pin-submit">Enter</button>
+    <p class="login-hint">Set PIN in <code>booking/js/config.js</code></p>
+  </div>
+
+  <div id="dashboard" class="dashboard hidden">
+    <header class="dash-header">
+      <h1>Inquiries &amp; schedule</h1>
+      <div class="dash-actions">
+        <button type="button" id="refresh-btn">Refresh</button>
+        <a href="../booking/index.html">Public booking page</a>
+        <button type="button" id="logout-btn">Log out</button>
+      </div>
+    </header>
+
+    <div class="dash-grid">
+      <section class="dash-panel">
+        <h2>New requests <span id="pending-count"></span></h2>
+        <div id="bookings-list" class="bookings-list"></div>
+      </section>
+
+      <section class="dash-panel">
+        <h2>Block a date</h2>
+        <form id="block-form" class="block-form">
+          <input type="date" id="block-date" required>
+          <select id="block-service">
+            <option value="all">All services</option>
+            <option value="dj">DJ only</option>
+            <option value="photo">Photo only</option>
+          </select>
+          <select id="block-status">
+            <option value="booked">Booked</option>
+            <option value="blocked">Blocked</option>
+            <option value="available">Mark available</option>
+          </select>
+          <input type="text" id="block-note" placeholder="Note (optional)">
+          <button type="submit">Update calendar</button>
+        </form>
+        <h3>Calendar snapshot</h3>
+        <ul id="availability-list" class="availability-list"></ul>
+      </section>
+    </div>
+  </div>
+
+  <script src="../booking/js/config.js"></script>
+  <script>
+    if (!window.MANA3_BOOKING) {
+      document.write('<script src="../booking/js/config.example.js"><\/script>');
+    }
+  </script>
+  <script src="js/admin.js?v=1"></script>
+</body>
+</html>

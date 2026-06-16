@@ -1,0 +1,177 @@
+/* Mana3 — package & quote pricing */
+
+.price-display {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum' 1;
+}
+
+.price-currency {
+  font-size: 0.72em;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--price-accent, #00d4ff);
+  margin-right: 1px;
+  align-self: baseline;
+  position: relative;
+  top: 0.06em;
+}
+
+.price-amount {
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--price-main, #fff);
+}
+
+.price-unit {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 0.28em;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin-left: 8px;
+  align-self: center;
+}
+
+/* DJ Cobra — package card prices */
+.pkg-card .price-display {
+  --price-main: #ffffff;
+  --price-accent: rgba(255, 255, 255, 0.55);
+  --price-label: rgba(255, 255, 255, 0.42);
+}
+
+.pkg-price.price-display {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  align-content: flex-end;
+  width: 100%;
+  min-height: 52px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.75rem, 2.6vw, 2.1rem);
+}
+
+.pkg-price.price-display::before {
+  content: 'Starting at';
+  flex: 0 0 100%;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--price-label, rgba(255, 255, 255, 0.42));
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.pkg-card.friends .price-display {
+  --price-main: #ffffff;
+  --price-accent: rgba(255, 255, 255, 0.6);
+}
+.pkg-card.classy .price-display {
+  --price-main: #ffe566;
+  --price-accent: rgba(255, 255, 255, 0.55);
+}
+.pkg-card.deluxe .price-display {
+  --price-main: #0f172a;
+  --price-accent: #92400e;
+  --price-label: rgba(15, 23, 42, 0.45);
+}
+.pkg-card.deluxe .pkg-price.price-display {
+  border-top-color: rgba(15, 23, 42, 0.1);
+}
+
+.pkg-card.wedding-silver .price-display {
+  --price-main: #2a3138;
+  --price-accent: #6b7580;
+  --price-label: rgba(42, 49, 56, 0.5);
+}
+.pkg-card.wedding-silver .pkg-price.price-display {
+  border-top-color: rgba(42, 49, 56, 0.12);
+}
+.pkg-card.wedding-gold .price-display {
+  --price-main: #3d2e08;
+  --price-accent: #7a5c12;
+  --price-label: rgba(61, 46, 8, 0.5);
+}
+.pkg-card.wedding-gold .pkg-price.price-display {
+  border-top-color: rgba(61, 46, 8, 0.12);
+}
+.pkg-card.wedding-platinum .price-display {
+  --price-main: #faf7ff;
+  --price-accent: #ddd6fe;
+  --price-label: rgba(250, 247, 255, 0.5);
+}
+.pkg-card.wedding-platinum .pkg-price.price-display {
+  border-top-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Estimate panel */
+#estimate-total.price-display,
+#estimate-package-price.price-display {
+  font-family: 'Outfit', system-ui, sans-serif;
+}
+#estimate-total.price-display {
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+}
+#estimate-total.price-display .price-amount {
+  color: #ffd54a;
+  font-weight: 700;
+}
+#estimate-package-price.price-display {
+  font-size: 1rem;
+}
+#estimate-package-price.price-display .price-amount {
+  color: #ffd54a;
+}
+
+/* CapturesRU */
+.tier-rate.price-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+  margin-bottom: 26px;
+}
+.card.silver .tier-rate.price-display .price-amount { color: #3d3428; }
+.card.silver .tier-rate.price-display .price-currency { color: #7a6a50; }
+.card.gold .tier-rate.price-display .price-amount,
+.card.platinum .tier-rate.price-display .price-amount {
+  color: #c9a227;
+}
+
+.event-tier-price.price-display {
+  font-size: clamp(1.65rem, 3.5vw, 2.1rem);
+  margin-bottom: 16px;
+}
+
+/* Addon & ceremony */
+.addon-flat-price,
+.ceremony-price,
+.addon-line-total strong,
+.addon-price-display {
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+.addon-flat-price {
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+  color: #00d4ff;
+}
+.ceremony-price {
+  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+  color: #ffd54a;
+}
+.addon-line-total strong,
+.addon-price-display {
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  color: #ffd54a;
+}

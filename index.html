@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mana3 Event Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #08060a;
+      --gold: #e7c46a;
+      --saffron: #d9901a;
+      --ivory: #fff8ee;
+      --wine: #3a0f18;
+      --cyan: #00d4ff;
+      --violet: #8b5cf6;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Syne', sans-serif;
+      background: var(--bg);
+      color: var(--ivory);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    #hub-canvas {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+    .wrap {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 28px 48px;
+    }
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+    .logo span { color: var(--gold); font-style: italic; }
+    .nav-tag {
+      font-size: 10px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(255,248,238,0.45);
+    }
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px 80px;
+      text-align: center;
+    }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--saffron);
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 10vw, 108px);
+      font-weight: 400;
+      line-height: 0.95;
+      margin-bottom: 24px;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    h1 em {
+      font-style: italic;
+      background: linear-gradient(135deg, var(--gold), var(--saffron), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .lead {
+      max-width: 520px;
+      font-size: 15px;
+      line-height: 1.7;
+      color: rgba(255,248,238,0.55);
+      margin-bottom: 56px;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    .portals {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(280px, 400px));
+      gap: 24px;
+      width: 100%;
+      max-width: 860px;
+    }
+    @media (max-width: 640px) {
+      .portals { grid-template-columns: 1fr; }
+      nav { padding: 20px 24px; }
+    }
+    .portal {
+      position: relative;
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 24px;
+      overflow: hidden;
+      min-height: 320px;
+      padding: 36px 32px;
+      text-align: left;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      opacity: 0;
+      transform: translateY(40px) scale(0.96);
+    }
+    .portal:hover { transform: translateY(-8px) scale(1.02); }
+    .portal::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.25), transparent 50%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+    .portal-photo {
+      background: linear-gradient(160deg, #3a0f18 0%, #6b1020 45%, #2a0810 100%);
+      box-shadow: 0 30px 80px rgba(217,144,26,0.2);
+    }
+    .portal-dj {
+      background: linear-gradient(160deg, #0f0a1a 0%, #1a1030 40%, #0b0b0f 100%);
+      box-shadow: 0 30px 80px rgba(139,92,246,0.25);
+    }
+    .portal-icon {
+      font-size: 48px;
+      margin-bottom: 20px;
+      display: block;
+    }
+    .portal-label {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      margin-bottom: 8px;
+    }
+    .portal-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .portal-photo .portal-title em { color: var(--gold); font-style: italic; }
+    .portal-dj .portal-title {
+      background: linear-gradient(90deg, #f5c542, #00d4ff, #8b5cf6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .portal-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: rgba(255,248,238,0.55);
+      margin-bottom: 28px;
+    }
+    .portal-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .portal-cta svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.4s ease;
+    }
+    .portal:hover .portal-cta svg { transform: translateX(6px); }
+    .portal-glow {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      filter: blur(60px);
+      opacity: 0.4;
+      pointer-events: none;
+    }
+    .portal-photo .portal-glow { background: var(--saffron); top: -60px; right: -40px; }
+    .portal-dj .portal-glow { background: var(--violet); bottom: -60px; left: -40px; }
+    footer {
+      text-align: center;
+      padding: 32px;
+      font-size: 12px;
+      color: rgba(255,248,238,0.35);
+      letter-spacing: 0.06em;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .eyebrow, h1, .lead, .portal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="hub-canvas" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="wrap">
+    <nav>
+      <div class="logo">Mana<span>3</span></div>
+      <a href="booking/index.html" class="nav-tag" style="text-decoration:none;color:var(--gold);">Book &amp; quote →</a>
+    </nav>
+    <main>
+      <p class="eyebrow" data-animate>Curated experiences</p>
+      <h1 data-animate>Where moments<br>become <em>legends</em></h1>
+      <p class="lead" data-animate>
+        Premium photography and world-class DJ entertainment — two studios, one vision for extraordinary events.
+      </p>
+      <div class="portals">
+        <a href="capturesru/index.html" class="portal portal-photo" data-animate>
+          <span class="portal-glow"></span>
+          <span class="portal-icon">📷</span>
+          <p class="portal-label">Photography & Film</p>
+          <h2 class="portal-title">Captures<em>RU</em></h2>
+          <p class="portal-desc">Royal saffron weddings, cinematic films, drone aerials & luxury albums.</p>
+          <span class="portal-cta">Explore studio <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+        <a href="dj-cobra/index.html" class="portal portal-dj" data-animate>
+          <span class="portal-glow"></span>
+          <span class="portal-icon">🎧</span>
+          <p class="portal-label">DJ · Lighting · Entertainment</p>
+          <h2 class="portal-title">DJ Cobra</h2>
+          <p class="portal-desc">Premium sound, dynamic lighting, lasers & club-grade energy for every celebration.</p>
+          <span class="portal-cta">Enter the floor <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </div>
+      <p style="margin-top:40px;opacity:0;transform:translateY(20px)" data-animate>
+        <a href="booking/index.html" style="display:inline-block;padding:16px 36px;border-radius:50px;background:linear-gradient(135deg,var(--gold),var(--saffron));color:#1a0810;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;">Check dates &amp; request quote</a>
+      </p>
+    </main>
+    <footer>© Mana3 Event Management · <a href="admin/index.html" style="color:inherit;opacity:0.5;">Dashboard</a></footer>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script>
+    (function initHub3D() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const canvas = document.getElementById('hub-canvas');
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
+      camera.position.z = 8;
+      const geo = new THREE.IcosahedronGeometry(2.2, 1);
+      const mat = new THREE.MeshBasicMaterial({
+        color: 0xe7c46a,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.12
+      });
+      const mesh = new THREE.Mesh(geo, mat);
+      scene.add(mesh);
+      const pts = [];
+      for (let i = 0; i < 400; i++) {
+        pts.push((Math.random() - 0.5) * 24, (Math.random() - 0.5) * 24, (Math.random() - 0.5) * 24);
+      }
+      const pGeo = new THREE.BufferGeometry();
+      pGeo.setAttribute('position', new THREE.Float32BufferAttribute(pts, 3));
+      const particles = new THREE.Points(pGeo, new THREE.PointsMaterial({
+        color: 0xd9901a,
+        size: 0.04,
+        transparent: true,
+        opacity: 0.6
+      }));
+      scene.add(particles);
+      let mx = 0, my = 0;
+      window.addEventListener('mousemove', e => {
+        mx = (e.clientX / window.innerWidth - 0.5) * 2;
+        my = (e.clientY / window.innerHeight - 0.5) * 2;
+      });
+      function tick() {
+        requestAnimationFrame(tick);
+        mesh.rotation.x += 0.002;
+        mesh.rotation.y += 0.003;
+        particles.rotation.y += 0.0008;
+        camera.position.x += (mx * 0.8 - camera.position.x) * 0.05;
+        camera.position.y += (-my * 0.5 - camera.position.y) * 0.05;
+        camera.lookAt(0, 0, 0);
+        renderer.render(scene, camera);
+      }
+      tick();
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      });
+    })();
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      gsap.timeline({ defaults: { ease: 'power3.out' } })
+        .to('.eyebrow', { opacity: 1, y: 0, duration: 0.8 })
+        .to('h1', { opacity: 1, y: 0, duration: 1 }, '-=0.5')
+        .to('.lead', { opacity: 1, y: 0, duration: 0.8 }, '-=0.6')
+        .to('.portal', { opacity: 1, y: 0, scale: 1, duration: 1, stagger: 0.15 }, '-=0.4');
+    } else {
+      document.querySelectorAll('[data-animate], .portal').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+      });
+    }
+  </script>
+</body>
+</html>

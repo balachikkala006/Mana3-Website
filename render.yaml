@@ -1,0 +1,21 @@
+# Mana3 booking API — deploy at https://render.com
+# Static site: use Cloudflare Pages or Netlify (see DEPLOY.md)
+
+services:
+  - type: web
+    name: mana3-booking-api
+    runtime: python
+    plan: starter
+    buildCommand: "true"
+    startCommand: python3 api/booking_server.py
+    envVars:
+      - key: PORT
+        value: "10000"
+      - key: HOST
+        value: "0.0.0.0"
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+    disk:
+      name: mana3-booking-data
+      mountPath: /opt/render/project/src/data
+      sizeGB: 1

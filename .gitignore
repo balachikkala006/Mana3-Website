@@ -1,0 +1,14 @@
+# Database (optional paid API only)
+data/*.db
+data/*.sqlite
+
+# OS / editor
+.DS_Store
+.cursor/
+*.swp
+
+# Original large assets (optional backup)
+dj-cobra/images/Logo-original.png
+
+# Temp downloads
+**/_dl-*

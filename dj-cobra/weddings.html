@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Packages | DJ Cobra | Mana3</title>
+  <meta name="description" content="Silver, Gold & Platinum wedding DJ packages — Sangeet, Hindu weddings, mobile baraat & premium add-ons.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../shared/css/price-display.css?v=5">
+  <link rel="stylesheet" href="css/main.css?v=16">
+</head>
+<body class="loading wedding-page">
+  <div class="loader" id="loader">
+    <div class="loader-eq"><span></span><span></span><span></span><span></span><span></span></div>
+    <img src="images/Logo.png" alt="DJ Cobra" class="loader-logo" width="200" height="200">
+  </div>
+
+  <canvas id="dj-canvas" aria-hidden="true"></canvas>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <header class="nav">
+    <div class="nav-brand">
+      <a href="index.html" class="nav-back">← DJ Cobra</a>
+      <a href="index.html" class="nav-logo">
+        <img src="images/Logo.png" alt="DJ Cobra" class="nav-logo-img" width="44" height="44">
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#wedding-packages">Packages</a></li>
+      <li><a href="#wedding-showcase">Gallery</a></li>
+      <li><a href="#addons">Add-ons</a></li>
+      <li><a href="../booking/index.html?service=dj">Book &amp; quote</a></li>
+    </ul>
+    <a href="../booking/index.html?service=dj" class="nav-cta">Book now</a>
+  </header>
+
+  <section class="wedding-page-hero">
+    <div class="wedding-page-hero-bg" style="background-image: url('images/hindu-wedding.jpg');" aria-hidden="true"></div>
+    <div class="wedding-page-hero-overlay" aria-hidden="true"></div>
+    <div class="wedding-page-hero-content reveal">
+      <p class="section-label">DJ Cobra · Wedding production</p>
+      <h1>Wedding <span class="accent">Packages</span></h1>
+      <p class="wedding-event-badge" id="wedding-event-badge">Sangeet · Wedding · Reception</p>
+      <p class="wedding-page-lead">Silver, Gold &amp; Platinum tiers built for Hindu weddings, sangeet nights, baraat &amp; grand receptions — add premium effects below.</p>
+      <div class="event-portal-grid wedding-page-portals">
+        <a href="weddings.html?event=sangeet&amp;focus=pkg-wedding-silver" class="event-portal-card">
+          <span class="event-portal-name">Sangeet</span>
+        </a>
+        <a href="weddings.html?event=wedding&amp;focus=pkg-wedding-gold" class="event-portal-card event-portal-featured">
+          <span class="event-portal-name">Wedding</span>
+        </a>
+        <a href="weddings.html?event=reception&amp;focus=pkg-wedding-platinum" class="event-portal-card">
+          <span class="event-portal-name">Reception</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="wedding-packages" class="wedding-packages-section">
+    <div class="packages-inner">
+      <div class="packages-header reveal">
+        <p class="section-label">Sangeet · Wedding · Reception</p>
+        <h2 class="section-title">SILVER · GOLD · <span class="accent">PLATINUM</span></h2>
+      </div>
+
+      <nav class="wedding-tier-nav" aria-label="Wedding packages">
+        <a href="#pkg-wedding-silver" class="tier-tab tier-silver active">Silver · $2,000</a>
+        <a href="#pkg-wedding-gold" class="tier-tab tier-gold">Gold · $3,000</a>
+        <a href="#pkg-wedding-platinum" class="tier-tab tier-platinum">Platinum · $4,000</a>
+      </nav>
+      <p class="packages-scroll-hint wedding-scroll-hint">← Swipe packages →</p>
+
+      <div class="packages-grid wedding-packages-grid">
+        <div class="pkg-card wedding-silver" id="pkg-wedding-silver">
+          <div class="pkg-card-photo">
+            <img src="images/package-wedding-silver.jpg" alt="Indian sangeet celebration with floral decor" loading="lazy">
+          </div>
+          <div class="pkg-card-content">
+            <h2>Silver</h2>
+            <p class="pkg-guest"><b>Up to 300 guests</b> · Sangeet &amp; receptions</p>
+            <ul class="pkg-list">
+              <li>Premium audio</li>
+              <li>Decorative up-lighting — <b>8+ fixtures</b></li>
+              <li>Dance floor lighting · moving heads, disco balls &amp; lasers</li>
+              <li>Custom monogram / gobo</li>
+              <li>Two or more speakers &amp; subwoofers</li>
+              <li>Wireless microphones</li>
+            </ul>
+            <div class="pkg-price price-display"><span class="price-currency">$</span><span class="price-amount">2,000</span></div>
+            <button type="button" class="pkg-select-btn" data-package="wedding-silver" data-price="2000" data-label="Silver Wedding Package">Select</button>
+          </div>
+        </div>
+
+        <div class="pkg-card wedding-gold" id="pkg-wedding-gold">
+          <div class="pkg-card-photo">
+            <img src="images/package-wedding-gold.jpg" alt="Bride and groom at Hindu wedding mandap ceremony" loading="lazy">
+          </div>
+          <div class="pkg-card-content">
+            <span class="pkg-popular">Most booked</span>
+            <h2>Gold</h2>
+            <p class="pkg-guest"><b>Up to 500 guests</b> · Full wedding weekends</p>
+            <ul class="pkg-list">
+              <li>Everything in Silver, plus:</li>
+              <li>Up-lighting — <b>12–16 fixtures</b></li>
+              <li>Four or more speakers &amp; subwoofers</li>
+              <li>Two rear projection systems for video</li>
+              <li>Wash lights for the stage</li>
+              <li>Follow spotlight</li>
+            </ul>
+            <div class="pkg-price price-display"><span class="price-currency">$</span><span class="price-amount">3,000</span></div>
+            <button type="button" class="pkg-select-btn" data-package="wedding-gold" data-price="3000" data-label="Gold Wedding Package">Select</button>
+          </div>
+        </div>
+
+        <div class="pkg-card wedding-platinum" id="pkg-wedding-platinum">
+          <div class="pkg-card-photo">
+            <img src="images/package-wedding-platinum.jpg" alt="Grand Indian wedding reception with floral ceiling" loading="lazy">
+          </div>
+          <div class="pkg-card-content">
+            <h2>Platinum</h2>
+            <p class="pkg-guest"><b>Up to 1,000 guests</b> · Grand receptions</p>
+            <ul class="pkg-list">
+              <li>Premium audio &amp; professional MC</li>
+              <li>Up-lighting — <b>16–24 fixtures</b></li>
+              <li>Stage wash &amp; pin spots for cake displays</li>
+              <li>Follow spotlight · custom monogram / gobos</li>
+              <li>Full dance floor production · heads, lasers &amp; FX</li>
+              <li>Two large projection systems · special effects</li>
+            </ul>
+            <div class="pkg-price price-display"><span class="price-currency">$</span><span class="price-amount">4,000</span></div>
+            <button type="button" class="pkg-select-btn" data-package="wedding-platinum" data-price="4000" data-label="Platinum Wedding Package">Select</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="wedding-showcase" class="wedding-showcase-section">
+    <div class="section-pad">
+      <p class="section-label reveal">Real celebrations</p>
+      <h2 class="section-title reveal">HINDU WEDDINGS &amp; <span class="accent">BARAAT</span></h2>
+      <p class="wedding-showcase-intro reveal">We specialize in South Asian weddings — from mandap ceremonies to high-energy baraat processions with mobile sound on the vehicle.</p>
+      <div class="wedding-showcase-grid reveal">
+        <article class="wedding-showcase-card">
+          <img src="images/hindu-wedding.jpg" alt="Hindu wedding mandap ceremony with bride, groom and priest" loading="lazy">
+          <div class="wedding-showcase-caption">
+            <h3>Hindu Weddings</h3>
+            <p>Mandap, sangeet &amp; reception — full sound, uplighting &amp; dance floor energy tailored to your traditions.</p>
+          </div>
+        </article>
+        <article class="wedding-showcase-card">
+          <img src="images/mobile-baraat.jpg" alt="Indian wedding baraat — guests dancing in traditional attire on the street" loading="lazy">
+          <div class="wedding-showcase-caption">
+            <h3>Mobile Baraat</h3>
+            <p>On-the-go PA on the car or float — we keep the baraat loud, clear &amp; hype from start to venue.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="ceremony-extras-wrap">
+    <div class="ceremony-extras reveal">
+      <h3 class="ceremony-extras-title">Ceremony add-ons</h3>
+      <div class="ceremony-extras-grid">
+        <article class="ceremony-card ceremony-card-visual" data-addon="wedding-ceremony">
+          <div class="ceremony-card-img">
+            <img src="images/hindu-wedding.jpg" alt="Wedding ceremony sound setup" loading="lazy">
+          </div>
+          <h4>Wedding Ceremony</h4>
+          <p>Sound &amp; wireless mics for vows at the mandap</p>
+          <p class="ceremony-price">$500</p>
+          <button type="button" class="addon-add-btn addon-add-fixed ceremony-add-btn" data-fixed="500">Add to estimate</button>
+        </article>
+        <article class="ceremony-card ceremony-card-visual" data-addon="mobile-baraat">
+          <div class="ceremony-card-img">
+            <img src="images/mobile-baraat.jpg" alt="Baraat procession celebration with dancing guests" loading="lazy">
+          </div>
+          <h4>Mobile Baraat</h4>
+          <p>Vehicle-mounted sound — $350–$750 based on crowd &amp; route</p>
+          <div class="duration-group ceremony-tier-group">
+            <button type="button" class="dur-btn active" data-price="350" data-label="Up to 150 guests">$350</button>
+            <button type="button" class="dur-btn" data-price="550" data-label="150–300 guests">$550</button>
+            <button type="button" class="dur-btn" data-price="750" data-label="300+ guests">$750</button>
+          </div>
+          <div class="addon-line-total"><strong class="addon-price-display">$350</strong></div>
+          <button type="button" class="addon-add-btn addon-add-fixed ceremony-add-btn">Add to estimate</button>
+        </article>
+      </div>
+      <p class="ceremony-note">Baraat final quote confirmed after we discuss crowd size &amp; requirements.</p>
+    </div>
+  </section>
+
+  <section id="addons" class="addons-section wedding-addons-section">
+    <div class="section-pad addons-head reveal">
+      <p class="section-label">Stack on any tier</p>
+      <h2 class="section-title">PREMIUM <span class="accent">ADD-ONS</span></h2>
+      <p class="addons-intro">Cold sparks, LED floor, photo booths &amp; more — your estimate updates as you build.</p>
+    </div>
+
+    <div class="addons-grid">
+      <article class="addon-card reveal" data-addon="cold-sparks">
+        <div class="addon-img"><img src="images/cold-spark.jpg" alt="Cold sparks" loading="lazy"></div>
+        <div class="addon-body">
+          <h3>Cold Sparks</h3>
+          <p class="addon-unit">$125 per unit · indoor-safe fountains</p>
+          <p class="addon-qty-label">How many units?</p>
+          <div class="qty-group" data-unit="125">
+            <button type="button" class="qty-btn" data-qty="2">2</button>
+            <button type="button" class="qty-btn" data-qty="4">4</button>
+            <button type="button" class="qty-btn" data-qty="6">6</button>
+            <button type="button" class="qty-btn" data-qty="8">8</button>
+          </div>
+          <div class="addon-line-total">Selected: <span class="addon-qty-display">0</span> · <strong class="addon-price-display">$0</strong></div>
+          <button type="button" class="addon-add-btn" disabled>Add to estimate</button>
+        </div>
+      </article>
+      <article class="addon-card reveal" data-addon="clouds">
+        <div class="addon-img"><img src="images/dancing-clouds.jpg" alt="Dancing on clouds" loading="lazy"></div>
+        <div class="addon-body">
+          <h3>Dancing on the Cloud</h3>
+          <p class="addon-unit">$350 per effect</p>
+          <div class="qty-group" data-unit="350">
+            <button type="button" class="qty-btn" data-qty="1">1</button>
+            <button type="button" class="qty-btn" data-qty="2">2</button>
+          </div>
+          <div class="addon-line-total">Selected: <span class="addon-qty-display">0</span> · <strong class="addon-price-display">$0</strong></div>
+          <button type="button" class="addon-add-btn" disabled>Add to estimate</button>
+        </div>
+      </article>
+      <article class="addon-card reveal" data-addon="booth-360">
+        <div class="addon-img"><img src="images/photo-booth-360.jpg" alt="360 booth" loading="lazy"></div>
+        <div class="addon-body">
+          <h3>360° Photo Booth</h3>
+          <div class="duration-group">
+            <button type="button" class="dur-btn active" data-price="350" data-label="2–3 hours">2–3 hrs · $350</button>
+            <button type="button" class="dur-btn" data-price="500" data-label="4 hours">4 hrs · $500</button>
+          </div>
+          <div class="addon-line-total"><strong class="addon-price-display">$350</strong></div>
+          <button type="button" class="addon-add-btn addon-add-fixed">Add to estimate</button>
+        </div>
+      </article>
+      <article class="addon-card reveal" data-addon="booth-custom">
+        <div class="addon-img"><img src="images/photo-booth-custom.jpg" alt="Custom booth" loading="lazy"></div>
+        <div class="addon-body">
+          <h3>Custom Photo Booth</h3>
+          <div class="duration-group">
+            <button type="button" class="dur-btn active" data-price="450" data-label="2–3 hours">2–3 hrs · $450</button>
+            <button type="button" class="dur-btn" data-price="550" data-label="3–4 hours">3–4 hrs · $550</button>
+          </div>
+          <div class="addon-line-total"><strong class="addon-price-display">$450</strong></div>
+          <button type="button" class="addon-add-btn addon-add-fixed">Add to estimate</button>
+        </div>
+      </article>
+      <article class="addon-card reveal" data-addon="led-floor">
+        <div class="addon-img"><img src="images/led-dance-floor.jpg" alt="LED dance floor" loading="lazy"></div>
+        <div class="addon-body">
+          <h3>LED Dance Floor</h3>
+          <p class="addon-flat-price">$1,650 · 16′ × 16′</p>
+          <button type="button" class="addon-add-btn addon-add-fixed" data-fixed="1650">Add to estimate</button>
+        </div>
+      </article>
+      <article class="addon-card reveal" data-addon="led-wall">
+        <div class="addon-img"><img src="images/led-video-wall.jpg" alt="LED wall" loading="lazy"></div>
+        <div class="addon-body">
+          <h3>LED Wall</h3>
+          <p class="addon-flat-price">$1,600 · 12′ × 10′</p>
+          <button type="button" class="addon-add-btn addon-add-fixed" data-fixed="1600">Add to estimate</button>
+        </div>
+      </article>
+    </div>
+
+    <aside class="estimate-panel reveal" id="estimate-panel" aria-live="polite">
+      <h3>Your wedding estimate</h3>
+      <div class="estimate-package-row" id="estimate-package-row" hidden>
+        <span>Package</span>
+        <strong id="estimate-package-label"></strong>
+        <strong id="estimate-package-price" class="price-display"><span class="price-currency">$</span><span class="price-amount">0</span></strong>
+      </div>
+      <ul class="estimate-list" id="estimate-list">
+        <li class="estimate-empty">Select a Silver, Gold or Platinum package to start.</li>
+      </ul>
+      <div class="estimate-total-row">
+        <span>Estimated total</span>
+        <strong id="estimate-total" class="price-display"><span class="price-currency">$</span><span class="price-amount">0</span></strong>
+      </div>
+      <p class="estimate-note">Final quote confirmed by DJ Cobra after your event details</p>
+      <a href="../booking/index.html?service=dj" class="btn-primary estimate-cta" id="estimate-booking-link">Request full quote</a>
+    </aside>
+  </section>
+
+  <section class="contact-cta reveal">
+    <div class="contact-bg" style="background-image: url('images/dj-performing-live.jpg');" aria-hidden="true"></div>
+    <div class="contact-inner">
+      <h2>Ready for your wedding?</h2>
+      <p>Select your package, add effects, then request a quote — we’ll confirm dates on our calendar.</p>
+      <div class="contact-actions">
+        <a href="../booking/index.html?service=dj" class="btn-primary">Book &amp; get quote</a>
+        <a href="index.html#packages" class="contact-phone contact-phone-secondary">View celebration packages</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>DJ Cobra · A Mana3 Event Management Studio</p>
+    <p style="margin-top:12px;"><a href="index.html">← Back to DJ Cobra home</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/addons.js?v=9"></script>
+  <script src="js/main.js?v=7"></script>
+</body>
+</html>

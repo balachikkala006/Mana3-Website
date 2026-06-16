@@ -1,0 +1,174 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background: #0f0d12;
+  color: #fff8ee;
+  min-height: 100vh;
+}
+.hidden { display: none !important; }
+
+.login-screen {
+  max-width: 360px;
+  margin: 15vh auto;
+  padding: 40px;
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.login-screen h1 { font-family: 'Syne', sans-serif; margin-bottom: 8px; }
+.login-screen p { color: rgba(255,248,238,0.5); font-size: 14px; margin-bottom: 20px; }
+.login-screen input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: #000;
+  color: #fff;
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+.login-screen button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #8b5cf6, #00d4ff);
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+}
+.login-hint { margin-top: 16px; font-size: 11px; color: rgba(255,255,255,0.3); }
+.login-hint code { color: #e7c46a; }
+
+.dashboard { padding: 32px 40px 60px; max-width: 1200px; margin: 0 auto; }
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.dash-header h1 { font-family: 'Syne', sans-serif; font-size: 28px; }
+.dash-actions { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.dash-actions button, .dash-actions a {
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 13px;
+  text-decoration: none;
+  color: #fff8ee;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  cursor: pointer;
+}
+.dash-actions button:hover, .dash-actions a:hover { border-color: #e7c46a; }
+
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 28px;
+}
+.dash-panel {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 24px;
+}
+.dash-panel h2 {
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #e7c46a;
+  margin-bottom: 16px;
+}
+.dash-panel h3 {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,248,238,0.45);
+  margin: 24px 0 12px;
+}
+
+.booking-card {
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 12px;
+}
+.booking-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.booking-card h3 { font-size: 16px; color: #fff; margin: 0; letter-spacing: 0; text-transform: none; }
+.booking-meta { font-size: 12px; color: rgba(255,248,238,0.55); line-height: 1.6; }
+.booking-meta a { color: #00d4ff; }
+.status-badge {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-weight: 700;
+}
+.status-pending { background: rgba(217,144,26,0.25); color: #e7c46a; }
+.status-contacted { background: rgba(0,212,255,0.2); color: #00d4ff; }
+.status-confirmed { background: rgba(110,231,160,0.2); color: #6ee7a0; }
+.status-declined { background: rgba(248,113,113,0.2); color: #f87171; }
+
+.card-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.card-actions button {
+  padding: 6px 12px;
+  font-size: 11px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: transparent;
+  color: #fff8ee;
+  cursor: pointer;
+}
+.card-actions button:hover { border-color: #e7c46a; }
+
+.block-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.block-form input, .block-form select {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: #000;
+  color: #fff;
+}
+.block-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 50px;
+  background: #3a0f18;
+  color: #e7c46a;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.availability-list {
+  list-style: none;
+  font-size: 12px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+.availability-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+}
+
+.empty-state { color: rgba(255,248,238,0.4); font-size: 14px; padding: 24px 0; }
+
+@media (max-width: 800px) {
+  .dash-grid { grid-template-columns: 1fr; }
+}

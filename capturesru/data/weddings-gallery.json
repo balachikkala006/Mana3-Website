@@ -1,0 +1,170 @@
+[
+  {
+    "src": "images/weddings/hero-couple-sunset.jpg",
+    "caption": "Golden hour \u2014 couple in the field",
+    "orient": "landscape",
+    "ratio": "32",
+    "w": 1800,
+    "h": 1200
+  },
+  {
+    "src": "images/weddings/about-bride-lehenga.jpg",
+    "caption": "Bride in lehenga \u2014 fairy lights",
+    "orient": "landscape",
+    "ratio": "32",
+    "w": 1800,
+    "h": 1200
+  },
+  {
+    "src": "images/weddings/featured-bride-mandap.jpg",
+    "caption": "Bride at the mandap",
+    "orient": "portrait",
+    "ratio": "portrait",
+    "w": 1328,
+    "h": 1800
+  },
+  {
+    "src": "images/weddings/featured-mandap-couple.jpg",
+    "caption": "Couple at the mandap",
+    "orient": "portrait",
+    "ratio": "portrait",
+    "w": 1200,
+    "h": 1800
+  },
+  {
+    "src": "images/weddings/featured-groom-portrait.jpg",
+    "caption": "Groom portrait",
+    "orient": "portrait",
+    "ratio": "portrait",
+    "w": 1200,
+    "h": 1800
+  },
+  {
+    "src": "images/weddings/featured-sikh-couple.jpg",
+    "caption": "Sikh wedding couple",
+    "orient": "landscape",
+    "ratio": "43",
+    "w": 1800,
+    "h": 1349
+  },
+  {
+    "src": "images/weddings/featured-mandap-joy.jpg",
+    "caption": "Joy at the mandap",
+    "orient": "landscape",
+    "ratio": "127",
+    "w": 1800,
+    "h": 1270
+  },
+  {
+    "src": "images/weddings/featured-dupatta-motion.jpg",
+    "caption": "Dupatta in motion",
+    "orient": "landscape",
+    "ratio": "32",
+    "w": 1800,
+    "h": 1200
+  },
+  {
+    "src": "images/weddings/wedding-golden-1962.jpg",
+    "caption": "Sunlit wedding portrait",
+    "orient": "landscape",
+    "ratio": "32",
+    "w": 1800,
+    "h": 1200
+  },
+  {
+    "src": "images/weddings/wedding-golden-2076.jpg",
+    "caption": "Warm golden ceremony",
+    "orient": "portrait",
+    "ratio": "portrait",
+    "w": 1200,
+    "h": 1800
+  },
+  {
+    "src": "images/weddings/wedding-sunset-619.jpg",
+    "caption": "Sunset wedding moment",
+    "orient": "landscape",
+    "ratio": "32",
+    "w": 1800,
+    "h": 1200
+  },
+  {
+    "src": "images/weddings/wedding-sunset-589.jpg",
+    "caption": "Golden light portrait",
+    "orient": "portrait",
+    "ratio": "portrait",
+    "w": 1200,
+    "h": 1800
+  },
+  {
+    "src": "images/weddings/wedding-ceremony-604.jpg",
+    "caption": "Wedding ceremony",
+    "orient": "portrait",
+    "ratio": "portrait",
+    "w": 1200,
+    "h": 1800
+  },
+  {
+    "src": "images/weddings/wedding-ceremony-609.jpg",
+    "caption": "Traditional celebration",
+    "orient": "portrait",
+    "ratio": "portrait",
+    "w": 1200,
+    "h": 1800
+  },
+  {
+    "src": "images/weddings/wedding-groom-614.jpg",
+    "caption": "Groom portrait",
+    "orient": "portrait",
+    "ratio": "portrait",
+    "w": 1199,
+    "h": 1800
+  },
+  {
+    "src": "images/weddings/wedding-couple-615.jpg",
+    "caption": "Couple portrait",
+    "orient": "portrait",
+    "ratio": "portrait",
+    "w": 1199,
+    "h": 1800
+  },
+  {
+    "src": "images/weddings/wedding-outdoor-5034.jpg",
+    "caption": "Outdoor wedding",
+    "orient": "landscape",
+    "ratio": "43",
+    "w": 1800,
+    "h": 1334
+  },
+  {
+    "src": "images/weddings/wedding-outdoor-5037.jpg",
+    "caption": "Natural light portrait",
+    "orient": "landscape",
+    "ratio": "32",
+    "w": 1800,
+    "h": 1200
+  },
+  {
+    "src": "images/weddings/wedding-portrait-5594.jpg",
+    "caption": "Wedding day portrait",
+    "orient": "portrait",
+    "ratio": "portrait",
+    "w": 1200,
+    "h": 1800
+  },
+  {
+    "src": "images/weddings/wedding-ceremony-2137.jpg",
+    "caption": "Ceremony details",
+    "orient": "landscape",
+    "ratio": "32",
+    "w": 1800,
+    "h": 1200
+  },
+  {
+    "src": "images/weddings/wedding-celebration-2193.jpg",
+    "caption": "Wedding celebration",
+    "orient": "portrait",
+    "ratio": "portrait",
+    "w": 1200,
+    "h": 1800
+  }
+]

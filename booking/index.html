@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book &amp; Quote | Mana3 Event Management</title>
+  <meta name="description" content="Request a quote for DJ Cobra or CapturesRU photography. Check dates, message us on WhatsApp or Instagram.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/booking.css?v=8">
+</head>
+<body>
+  <nav class="booking-nav">
+    <a href="../index.html">← Mana3 Home</a>
+    <span class="booking-logo">Book &amp; <em>quote</em></span>
+    <a href="../dj-cobra/index.html">DJ</a>
+    <a href="../capturesru/index.html">Photo</a>
+  </nav>
+
+  <header class="booking-hero">
+    <h1>Your date. <em>Your quote.</em></h1>
+    <p>Pick your dates on the calendar — weddings often span 3–5 days (Half saree, Sangeet, Wedding, Reception). Single-day events work too.</p>
+  </header>
+
+  <div class="booking-layout">
+    <aside class="booking-panel">
+      <h2>Availability</h2>
+      <div class="cal-nav">
+        <button type="button" id="cal-prev" aria-label="Previous month">‹</button>
+        <span id="cal-month"></span>
+        <button type="button" id="cal-next" aria-label="Next month">›</button>
+      </div>
+      <div id="cal-grid"></div>
+      <div class="cal-legend">
+        <span class="legend-available">Open</span>
+        <span class="legend-hold">On hold</span>
+        <span class="legend-booked">Booked / blocked</span>
+      </div>
+
+      <div class="cal-hint" id="cal-hint">Select a day row below, then tap a date on the calendar.</div>
+      <div id="selected-dates-list" class="selected-dates-list" hidden></div>
+
+      <div class="channel-links">
+        <a href="#" class="channel-btn channel-wa" data-wa data-wa-text="Hi Mana3! I'd like to check availability and get a quote for my event.">WhatsApp us</a>
+        <a href="#" class="channel-btn channel-ig" data-ig target="_blank" rel="noopener">Instagram DM</a>
+      </div>
+    </aside>
+
+    <section class="booking-panel">
+      <h2>Request a quote</h2>
+      <form id="booking-form" class="booking-form">
+        <label for="service">Service</label>
+        <select id="service" name="service" required>
+          <option value="dj">DJ Cobra — DJ &amp; lighting</option>
+          <option value="photo">CapturesRU — Photography &amp; film</option>
+          <option value="both">Both — Full Mana3 package</option>
+        </select>
+
+        <label for="package">Package</label>
+        <select id="package" name="package" required></select>
+
+        <label for="event-type">Event type</label>
+        <select id="event-type" name="event_type" required>
+          <option value="">Select type</option>
+          <option value="Full wedding (multi-day)">Full wedding (multi-day)</option>
+          <option value="Half saree / Dhoti ceremony">Half saree / Dhoti ceremony</option>
+          <option value="Sangeet / Mehndi">Sangeet / Mehndi</option>
+          <option value="Pre-wedding">Pre-wedding</option>
+          <option value="Wedding reception">Wedding reception</option>
+          <option value="Birthday">Birthday</option>
+          <option value="Sweet 16">Sweet 16</option>
+          <option value="Housewarming">Housewarming</option>
+          <option value="Corporate">Corporate</option>
+          <option value="Gender reveal">Gender reveal</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <label for="event-span">How many days?</label>
+        <select id="event-span" name="event_span">
+          <option value="1">1 day — single event</option>
+          <option value="2">2 days</option>
+          <option value="3">3 days — typical wedding</option>
+          <option value="4">4 days</option>
+          <option value="5">5 days — full celebration</option>
+        </select>
+        <p class="field-hint" id="event-span-hint"></p>
+
+        <div id="event-days-panel" class="event-days-panel">
+          <p class="event-days-title">Event days &amp; functions</p>
+          <p class="field-hint event-days-intro">Each event day is listed separately. Pick <strong>any open dates</strong> on the calendar (not necessarily back-to-back), then set the <strong>time (AM/PM)</strong> for each.</p>
+          <p class="event-range-summary" id="event-range-summary" hidden></p>
+          <p class="event-days-progress" id="event-days-progress"></p>
+          <div id="event-days" class="event-days-list"></div>
+        </div>
+
+        <input type="hidden" id="event-date" name="event_date">
+        <input type="hidden" id="event-days-json" name="event_days">
+
+        <div class="form-row">
+          <div>
+            <label for="client-name">Your name</label>
+            <input type="text" id="client-name" name="client_name" required autocomplete="name">
+          </div>
+          <div>
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div>
+            <label for="whatsapp">WhatsApp number</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="For scheduling updates">
+          </div>
+          <div>
+            <label for="instagram">Instagram @</label>
+            <input type="text" id="instagram" name="instagram" placeholder="yourhandle">
+          </div>
+        </div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email">
+
+        <label for="preferred-contact">Preferred contact</label>
+        <select id="preferred-contact" name="preferred_contact">
+          <option value="whatsapp">WhatsApp</option>
+          <option value="instagram">Instagram</option>
+          <option value="phone">Phone call</option>
+          <option value="email">Email</option>
+        </select>
+
+        <label for="message">Event details &amp; quote notes</label>
+        <textarea id="message" name="message" placeholder="Guest count, venue, hours, special requests…"></textarea>
+
+        <input type="hidden" id="addon-estimate" name="addon_estimate">
+
+        <button type="submit" class="submit-btn">Send quote to Mana3</button>
+        <p class="form-hint">Your request goes to our team on Telegram. We&apos;ll set up WhatsApp for planning after we confirm.</p>
+        <p class="form-status" id="form-status" role="status"></p>
+      </form>
+    </section>
+  </div>
+
+  <p class="admin-link"><a href="../admin/index.html">Owner dashboard</a></p>
+
+  <script src="js/config.js"></script>
+  <script>
+    if (!window.MANA3_BOOKING) {
+      document.write('<script src="js/config.example.js"><\/script>');
+    }
+  </script>
+  <script src="js/booking.js?v=7"></script>
+</body>
+</html>

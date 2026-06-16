@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Photography Packages</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #FFF8EE;
+  min-height: 100vh;
+  padding: 48px 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.page { width: 1160px; max-width: 100%; }
+
+/* ── HEADER ── */
+.header {
+  text-align: center;
+  margin-bottom: 52px;
+  position: relative;
+}
+.header::after {
+  content: '';
+  display: block;
+  width: 80px; height: 2px;
+  background: linear-gradient(90deg, #D9901A, #E7C46A, #D9901A);
+  margin: 18px auto 0;
+}
+.header-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #D9901A;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.header-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 54px;
+  font-weight: 700;
+  color: #3A0F18;
+  line-height: 1.08;
+}
+.header-title em {
+  font-style: italic;
+  color: #D9901A;
+  font-weight: 400;
+}
+.header-sub {
+  margin-top: 14px;
+  font-size: 13px;
+  color: #8a7a60;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+}
+
+/* ── GRID ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+/* ── BASE CARD ── */
+.card {
+  border-radius: 20px;
+  padding: 36px 28px 30px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* SILVER */
+.card.silver {
+  background: #ffffff;
+  border: 1.5px solid #e8ddd0;
+  box-shadow: 0 8px 40px rgba(180,140,80,0.10);
+}
+.card.silver .tier-name { color: #2a2018; }
+.card.silver .tier-rate { color: #6a5a40; }
+.card.silver .section-label { color: #b09060; }
+.card.silver .feat { color: #4a3e2c; }
+.card.silver .feat-dot { background: #d4b070; }
+.card.silver .chip { background: #fdf4e8; border-color: #e8d0a0; color: #8a6a30; }
+.card.silver .delivery-key { color: #9a8a70; }
+.card.silver .delivery-val { color: #2a2018; }
+.card.silver .delivery-section { border-top-color: #f0e4d0; }
+.card.silver .sec-divider { background: #f0e4d0; }
+.card.silver .card-stripe { background: linear-gradient(135deg, #c8c8c8 0%, #e8e8e8 50%, #a8a8a8 100%); }
+
+/* GOLD — hero card, slightly larger */
+.card.gold {
+  background: linear-gradient(160deg, #3A0F18 0%, #6B1020 60%, #3A0F18 100%);
+  border: none;
+  box-shadow: 0 20px 70px rgba(200,140,30,0.35), 0 4px 20px rgba(0,0,0,0.3);
+  transform: translateY(-12px);
+  padding: 44px 32px 36px;
+}
+.card.gold .tier-name { color: #FFF8EE; }
+.card.gold .tier-rate { color: #E7C46A; }
+.card.gold .section-label { color: #E7C46A; }
+.card.gold .feat { color: #c8b898; }
+.card.gold .feat-dot { background: #E7C46A; }
+.card.gold .chip { background: rgba(212,168,64,0.12); border-color: rgba(212,168,64,0.3); color: #E7C46A; }
+.card.gold .delivery-key { color: #a08860; }
+.card.gold .delivery-val { color: #FFF8EE; }
+.card.gold .delivery-section { border-top-color: rgba(212,168,64,0.2); }
+.card.gold .sec-divider { background: rgba(212,168,64,0.2); }
+.card.gold .card-stripe { background: linear-gradient(135deg, #E7C46A 0%, #f0cc70 50%, #c49030 100%); }
+.card.gold .popular-badge {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: linear-gradient(135deg, #E7C46A, #f0cc70);
+  color: #3A0F18;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 50px;
+}
+
+/* PLATINUM */
+.card.platinum {
+  background: linear-gradient(160deg, #6B1020 0%, #7A1F33 60%, #6B1020 100%);
+  border: none;
+  box-shadow: 0 12px 50px rgba(80,140,220,0.2), 0 4px 20px rgba(0,0,0,0.25);
+}
+.card.platinum .tier-name { color: #FFF8EE; }
+.card.platinum .tier-rate { color: #E7C46A; }
+.card.platinum .section-label { color: #E7C46A; }
+.card.platinum .feat { color: #9ab0d0; }
+.card.platinum .feat-dot { background: #D9901A; }
+.card.platinum .chip { background: rgba(90,158,224,0.12); border-color: rgba(90,158,224,0.3); color: #E7C46A; }
+.card.platinum .delivery-key { color: #5a7898; }
+.card.platinum .delivery-val { color: #FFF8EE; }
+.card.platinum .delivery-section { border-top-color: rgba(90,158,224,0.2); }
+.card.platinum .sec-divider { background: rgba(90,158,224,0.2); }
+.card.platinum .card-stripe { background: linear-gradient(135deg, #5a8ec0 0%, #9ac0f0 50%, #3a6ea0 100%); }
+
+/* ── CARD INNER ELEMENTS ── */
+.card-stripe {
+  height: 4px;
+  border-radius: 2px;
+  margin-bottom: 28px;
+  width: 50px;
+}
+
+.tier-label {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  opacity: 0.5;
+  margin-bottom: 6px;
+}
+.card.silver .tier-label { color: #8a7a60; }
+.card.gold .tier-label { color: #E7C46A; }
+.card.platinum .tier-label { color: #E7C46A; }
+
+.tier-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.tier-rate {
+  font-size: 15px;
+  font-weight: 400;
+  margin-bottom: 26px;
+  letter-spacing: 0.02em;
+}
+
+.sec-divider {
+  height: 1px;
+  margin-bottom: 18px;
+}
+
+.section-label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.team-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+.chip {
+  font-size: 11px;
+  font-weight: 400;
+  padding: 5px 12px;
+  border-radius: 50px;
+  border: 1px solid;
+  letter-spacing: 0.02em;
+}
+
+.feat {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.feat-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.feat-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.badge-free { background: #e8f5e8; color: #2a7a2a; }
+.badge-addon { background: #fff3e0; color: #b06020; }
+.badge-incl { background: #e0f0ff; color: #1a60b0; }
+.card.gold .badge-free { background: rgba(80,160,80,0.2); color: #80d080; }
+.card.gold .badge-addon { background: rgba(200,120,20,0.2); color: #d0a060; }
+.card.gold .badge-incl { background: rgba(60,120,220,0.2); color: #80b0f0; }
+.card.platinum .badge-free { background: rgba(80,160,80,0.2); color: #80d080; }
+.card.platinum .badge-addon { background: rgba(200,120,20,0.2); color: #d0a060; }
+.card.platinum .badge-incl { background: rgba(60,120,220,0.2); color: #80b0f0; }
+
+.section-gap { margin-top: 18px; }
+
+.delivery-section {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid;
+}
+.delivery-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 7px;
+}
+.delivery-key {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+}
+.delivery-val {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* ── FOOTER ── */
+.footer {
+  text-align: center;
+  margin-top: 48px;
+  padding-top: 28px;
+  border-top: 1px solid #e8d8c0;
+}
+.footer-events {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.footer-pill {
+  font-size: 11px;
+  color: #b09060;
+  border: 1px solid #e0cc9a;
+  padding: 4px 14px;
+  border-radius: 50px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+}
+.footer-note {
+  font-size: 12px;
+  color: #b09060;
+  letter-spacing: 0.06em;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.footer-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #D9901A;
+  font-style: italic;
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <p class="header-eyebrow">Royal Saffron & Ivory Collection</p>
+    <h1 class="header-title">Wedding Day <em>Packages</em></h1>
+    <p class="header-sub">Ceremony &nbsp;·&nbsp; Sangeet &nbsp;·&nbsp; Pre-Wedding Shoot Included</p>
+  </div>
+
+  <div class="cards">
+
+    <!-- ══ SILVER ══ -->
+    <div class="card silver">
+      <div class="card-stripe"></div>
+      <p class="tier-label">Tier 01</p>
+      <h2 class="tier-name">Silver</h2>
+      <p class="tier-rate">$350 / hour</p>
+      <div class="sec-divider"></div>
+
+      <p class="section-label">Team</p>
+      <div class="team-row">
+        <span class="chip">1–2 Photographers</span>
+        <span class="chip">1 Videographer</span>
+      </div>
+
+      <p class="section-label">Photography</p>
+      <div class="feat"><span class="feat-dot"></span><span>150–200 high-end edited photos</span></div>
+      <div class="feat"><span class="feat-dot"></span><span>Full candid + portrait coverage</span></div>
+      <div class="feat"><span class="feat-dot"></span><span>Pre-wedding shoot — 2 hrs <span class="feat-badge badge-free">Free</span></span></div>
+
+      <div class="section-gap">
+        <p class="section-label">Video</p>
+        <div class="feat"><span class="feat-dot"></span><span>Full-length wedding film</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Highlight video — 5–10 mins</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Bride & groom mixed teaser — 1–2 mins</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Live 1080p streaming — every event <span class="feat-badge badge-addon">+$150</span></span></div>
+      </div>
+
+      <div class="section-gap">
+        <p class="section-label">Album</p>
+        <div class="feat"><span class="feat-dot"></span><span>Premium printed album <span class="feat-badge badge-addon">$250–$500</span></span></div>
+      </div>
+
+      <div class="delivery-section">
+        <p class="section-label">Delivery</p>
+        <div class="delivery-row"><span class="delivery-key">High-end photo preview</span><span class="delivery-val">2–4 wks</span></div>
+        <div class="delivery-row"><span class="delivery-key">Full photo gallery</span><span class="delivery-val">3–6 wks</span></div>
+        <div class="delivery-row"><span class="delivery-key">Teaser + highlight video</span><span class="delivery-val">4–5 wks</span></div>
+        <div class="delivery-row"><span class="delivery-key">Full wedding film</span><span class="delivery-val">6–8 wks</span></div>
+      </div>
+    </div>
+
+    <!-- ══ GOLD ══ -->
+    <div class="card gold">
+      <div class="popular-badge">Most Popular</div>
+      <div class="card-stripe"></div>
+      <p class="tier-label">Tier 02</p>
+      <h2 class="tier-name">Gold</h2>
+      <p class="tier-rate">$500 / hour</p>
+      <div class="sec-divider"></div>
+
+      <p class="section-label">Team</p>
+      <div class="team-row">
+        <span class="chip">2–3 Photographers</span>
+        <span class="chip">1–2 Videographers</span>
+      </div>
+
+      <p class="section-label">Photography</p>
+      <div class="feat"><span class="feat-dot"></span><span>150–200 high-end edited photos</span></div>
+      <div class="feat"><span class="feat-dot"></span><span>Candid, portrait & detail coverage</span></div>
+      <div class="feat"><span class="feat-dot"></span><span>Pre-wedding shoot — 2–3 hrs <span class="feat-badge badge-free">Free</span></span></div>
+
+      <div class="section-gap">
+        <p class="section-label">Video</p>
+        <div class="feat"><span class="feat-dot"></span><span>Full-length wedding film</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>All-event highlight video — 5–10 mins</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Bride teaser — 1–2 mins</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Groom teaser — 1–2 mins</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Behind-the-lens guest moments</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Documentary-style film</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Live 1080p streaming — every event <span class="feat-badge badge-addon">+$150</span></span></div>
+      </div>
+
+      <div class="section-gap">
+        <p class="section-label">Album</p>
+        <div class="feat"><span class="feat-dot"></span><span>Premium printed album <span class="feat-badge badge-addon">$250–$500</span></span></div>
+      </div>
+
+      <div class="delivery-section">
+        <p class="section-label">Delivery</p>
+        <div class="delivery-row"><span class="delivery-key">High-end photo preview</span><span class="delivery-val">2–4 wks</span></div>
+        <div class="delivery-row"><span class="delivery-key">Full photo gallery</span><span class="delivery-val">3–6 wks</span></div>
+        <div class="delivery-row"><span class="delivery-key">Teasers + highlight video</span><span class="delivery-val">4–5 wks</span></div>
+        <div class="delivery-row"><span class="delivery-key">Full wedding film</span><span class="delivery-val">6–8 wks</span></div>
+      </div>
+    </div>
+
+    <!-- ══ PLATINUM ══ -->
+    <div class="card platinum">
+      <div class="card-stripe"></div>
+      <p class="tier-label">Tier 03</p>
+      <h2 class="tier-name">Platinum</h2>
+      <p class="tier-rate">$800 / hour</p>
+      <div class="sec-divider"></div>
+
+      <p class="section-label">Team</p>
+      <div class="team-row">
+        <span class="chip">3 Photographers</span>
+        <span class="chip">2 Videographers</span>
+      </div>
+
+      <p class="section-label">Photography</p>
+      <div class="feat"><span class="feat-dot"></span><span>200–300 luxury retouched photos</span></div>
+      <div class="feat"><span class="feat-dot"></span><span>Multi-angle coverage — every ritual</span></div>
+      <div class="feat"><span class="feat-dot"></span><span>Drone aerial photography</span></div>
+      <div class="feat"><span class="feat-dot"></span><span>Pre-wedding shoot — 2–3 hrs <span class="feat-badge badge-free">Free</span></span></div>
+      <div class="feat"><span class="feat-dot"></span><span>Sneak peek gallery — within 48 hrs</span></div>
+
+      <div class="section-gap">
+        <p class="section-label">Video</p>
+        <div class="feat"><span class="feat-dot"></span><span>Full cinematic wedding film</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>All-event highlight video — 5–10 mins</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Bride cinematic teaser — 1–2 mins</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Groom cinematic teaser — 1–2 mins</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Same-day highlight screened at reception</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Behind-the-lens guest documentary</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Drone aerial wedding film</span></div>
+        <div class="feat"><span class="feat-dot"></span><span>Live 1080p streaming — every event <span class="feat-badge badge-incl">Included</span></span></div>
+      </div>
+
+      <div class="section-gap">
+        <p class="section-label">Album</p>
+        <div class="feat"><span class="feat-dot"></span><span>Premium printed album <span class="feat-badge badge-addon">$250–$500</span></span></div>
+      </div>
+
+      <div class="delivery-section">
+        <p class="section-label">Delivery</p>
+        <div class="delivery-row"><span class="delivery-key">Sneak peek + high-end photos</span><span class="delivery-val">1–2 wks</span></div>
+        <div class="delivery-row"><span class="delivery-key">Full photo gallery</span><span class="delivery-val">2–4 wks</span></div>
+        <div class="delivery-row"><span class="delivery-key">Teasers + highlight video</span><span class="delivery-val">3–4 wks</span></div>
+        <div class="delivery-row"><span class="delivery-key">Full cinematic film</span><span class="delivery-val">5–7 wks</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-events">
+      <span class="footer-pill">Haldi</span>
+      <span class="footer-pill">Mehndi</span>
+      <span class="footer-pill">Baraat</span>
+      <span class="footer-pill">Wedding Ceremony</span>
+      <span class="footer-pill">Sangeet</span>
+      <span class="footer-pill">Pre-Wedding</span>
+    </div>
+    <p class="footer-note">All packages cover Wedding Day + Sangeet &nbsp;·&nbsp; Custom quotes available for full multi-day coverage</p>
+    <p class="footer-brand">Your Photography Studio</p>
+  </div>
+
+</div>
+</body>
+</html>
